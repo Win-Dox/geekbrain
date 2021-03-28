@@ -1,11 +1,15 @@
-package sample.parceToPolishNotation;
+package parcer;
 
 import java.util.List;
 import java.util.Stack;
 
-public class SortFacility implements ParseToPolishNotation{
-    @Override
-    public String parse(String inputString) throws Exception {
+public class SortFacility{
+
+    public static String toRPN (char[] str){
+        return processToken(str);
+    }
+
+    public static String processToken(char[] inputString){
         List<Character> operators = List.of('-', '+', '/', '*');
         List<Character> separatorNumber = List.of('.', ',');
         Character openBracket = '(';
@@ -14,7 +18,7 @@ public class SortFacility implements ParseToPolishNotation{
 
         StringBuilder outString = new StringBuilder();
 
-        for (Character token : inputString.toCharArray()) {
+        for (Character token : inputString) {
             if (token.equals(' ')) continue;
 
             if (token.equals(openBracket)) {
@@ -43,20 +47,15 @@ public class SortFacility implements ParseToPolishNotation{
                 while (!prevHeadStack.equals(openBracket)){
                     outString.append(" ");
                     outString.append(prevHeadStack);
-                    if (stack.isEmpty()) throw new Exception("Bad formula");
                     prevHeadStack = stack.pop();
                 }
-                continue;
             }
-
-            throw new Exception("Unexpected characters in a formula");
         }
 
         if (!stack.isEmpty()) {
             Character prevHeadStack;
             do {
                 prevHeadStack = stack.pop();
-                if (prevHeadStack.equals(openBracket)) throw new Exception("Bad formula");
                 outString.append(" ");
                 outString.append(prevHeadStack);
             } while (!stack.isEmpty());
@@ -65,4 +64,5 @@ public class SortFacility implements ParseToPolishNotation{
 
         return outString.toString().replace(',', '.');
     }
+
 }

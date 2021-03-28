@@ -1,10 +1,22 @@
-package sample.calc;
+package calc;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Stack;
+import monads.StackCalc;
+import monads.State;
 
-public class Calculator implements Calc {
+public class Calculator {
 
-    private boolean isDouble(String str) {
+    public static String Run(String input) {
+        return State.apply(StackCalc.apply(new Stack<Double>(), List.of(input.split("")).iterator()))
+                .map(Calculator::calculate)
+                .map(v -> v.get_1().peek())
+                .toString();
+    }
+
+
+    private static boolean isDouble(String str) {
         try {
             Double.parseDouble(str);
             return true;
@@ -13,29 +25,23 @@ public class Calculator implements Calc {
         }
     }
 
-    @Override
-    public Double calculate(String polishNotation) throws Exception {
-        Stack<Double> stack = new Stack<>();
 
-        if (polishNotation == null || polishNotation.equals("")) {
-            throw new Exception("Input string is empty");
+    public static StackCalc<Stack<Double>, Iterator<String>> calculate(StackCalc<Stack<Double>, Iterator<String>> state) {
+        Iterator<String> it = state.get_2();
+        if (!it.hasNext()) return state;
+
+        String token = it.next();
+        if (token.equals("") || token.equals(" ")) return calculate(state);
+
+        if (isDouble(token)) {
+            return calculate(state.modify(stack -> {
+                stack.push(Double.parseDouble(token));
+                return stack;
+            }));
         }
 
-        for (String token : polishNotation.split(" ")) {
-            if (token.equals("")) continue;
-
-            if (isDouble(token)) {
-                stack.push(Double.parseDouble(token));
-                continue;
-            }
+        return state.modify(stack -> {
             Double right = stack.pop();
-
-            if (stack.isEmpty()) {
-                if (token.equals("+") || token.equals("-")) stack.push(token.equals("+") ? right + 1 : right - 1);
-                else throw new Exception("Bad formula");
-                continue;
-            }
-
             Double left = stack.pop();
 
             switch (token) {
@@ -48,8 +54,7 @@ public class Calculator implements Calc {
                 case "/" -> stack.push(left / right);
 
             }
-        }
-
-        return stack.pop();
+            return stack;
+        });
     }
 }

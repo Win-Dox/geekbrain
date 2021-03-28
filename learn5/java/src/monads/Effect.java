@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public interface Effect {
+package monads;
+
+public interface Effect<T> {
+    public T run();
 }
