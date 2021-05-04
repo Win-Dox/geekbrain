@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-05-04T17:12:48.962Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36" etag="3QoNLEa2GzZ2E2d5RMzi" version="14.6.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-05-04T17:13:43.318Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36" etag="2u9w_XLK0RtBB6kUvRe2" version="14.6.9" type="github">
   <diagram id="WA5Gq9k9Bae7HWEB3TZD" name="Page-1">
     <mxGraphModel dx="1422" dy="801" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -38,39 +38,6 @@
         <mxCell id="kuR_hQlxpLB5Q5Pj9rX3-7" value="Пользователь" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kuR_hQlxpLB5Q5Pj9rX3-6" vertex="1" connectable="0">
           <mxGeometry x="-0.3393" y="1" relative="1" as="geometry">
             <mxPoint x="-49" y="-10" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="kuR_hQlxpLB5Q5Pj9rX3-8" value="" style="endArrow=classic;html=1;entryX=0.049;entryY=-0.003;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="623" y="20.99000000000001" as="sourcePoint" />
-            <mxPoint x="623.1500000000001" y="130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="kuR_hQlxpLB5Q5Pj9rX3-9" value="Редактировать&lt;br&gt;камеры" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kuR_hQlxpLB5Q5Pj9rX3-8" vertex="1" connectable="0">
-          <mxGeometry x="-0.3393" y="1" relative="1" as="geometry">
-            <mxPoint x="39" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="kuR_hQlxpLB5Q5Pj9rX3-11" value="" style="endArrow=classic;html=1;entryX=0.049;entryY=-0.003;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="703" y="20.99000000000001" as="sourcePoint" />
-            <mxPoint x="703.1500000000001" y="130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="kuR_hQlxpLB5Q5Pj9rX3-12" value="Редактировать&lt;br&gt;полигоны" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kuR_hQlxpLB5Q5Pj9rX3-11" vertex="1" connectable="0">
-          <mxGeometry x="-0.3393" y="1" relative="1" as="geometry">
-            <mxPoint x="39" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="kuR_hQlxpLB5Q5Pj9rX3-13" value="" style="endArrow=classic;html=1;entryX=0.049;entryY=-0.003;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="783" y="20.99000000000001" as="sourcePoint" />
-            <mxPoint x="783.1500000000001" y="130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="kuR_hQlxpLB5Q5Pj9rX3-14" value="Редактировать&lt;br&gt;источники&lt;br&gt;света" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="kuR_hQlxpLB5Q5Pj9rX3-13" vertex="1" connectable="0">
-          <mxGeometry x="-0.3393" y="1" relative="1" as="geometry">
-            <mxPoint x="39" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="kuR_hQlxpLB5Q5Pj9rX3-15" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
